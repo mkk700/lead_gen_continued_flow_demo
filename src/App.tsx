@@ -7,6 +7,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Version1 from './components/Version1';
+import Version2 from './components/Version2';
+import Version3 from './components/Version3';
 
 function App() {
   return (
@@ -22,13 +25,12 @@ function App() {
         </Container>
       </Navbar>
 
-
       <Router>
         <Routes>
-          <Route path="/" element={<h2>v1</h2>} />
-          <Route path="/v1" element={<h2>v1</h2>} />
-          <Route path="/v2" element={<h2>v2</h2>} />
-          <Route path="/v3" element={<h2>v3</h2>} />
+          <Route path="/" element={<Version1 />} />
+          <Route path="/v1" element={<Version1 />} />
+          <Route path="/v2" element={<Version2 />} />
+          <Route path="/v3" element={<Version3 />} />
           {/* not found */}
           <Route path="*" element={<h2>Not Found</h2>} />
         </Routes>
