@@ -14,7 +14,7 @@ import { LeadDataContext, LeadsData } from './store/MyContext';
 import useFetch from './hooks/useFetch';
 
 const lead_id = 6223272841088085;
-const access_token = 'EAAEQUasLgS4BAMb8IerAu4pRjAjvZAxZAKQTf84HVjztwVJG9iguy1iCQRTe2ZCBvG9tPvRnoTwmgeX26zew4E0hrJRYA7cjQdTK9kZBLiT8KrrKZColMDEnKZCHrtTYruDivLuOOjIRZALBQ7ApbtuboJPNnbPVgFZB0tRPas8Q8dv9mf9UsCsONFppHRvvckyulX97Ev0TrPKqB02BXRJU';
+const access_token = 'EAAGJ1PZAujwsBAPYHaWOuDoTNtmEC6931Gd4zgWHYfPZAqXZAP5ZC8oZBv4O8xmpAa5ZB3uZC7pSAPLiOWMzIt8EbX8N7xemvwMwM61TWVtwa0tgLxX2W0jNriS8CZAQIWz0u6fZCbiYFE5FQKuXrLgaxwSCozGSFKJbBqZAH8brxt3LVYkOBUeWZA2f1uMcGZCkIYWZAIygQiuLgdUZB8ZCZCDVoD2jQ9vOMO8S2Y319K5PTm4UOXZBSXxz8ZAYkL';
 const url = `https://graph.facebook.com/v16.0/${lead_id}?access_token=${access_token}`
 const options = {
   method: 'GET',
@@ -24,12 +24,13 @@ function App() {
   const [leadData, setLeadData] = useState<LeadsData | null>(null);
   const { data, error } = useFetch<LeadsData>(url, options)
 
-  const fetchLeads = async () => {
-    if (data)
-      setLeadData(data);
-    if (error)
-      console.error(error);
-  };
+  // if (data) { setLeadData(data); }
+  // if (error) { console.error(error); }
+  useEffect(() => {
+    if(data){
+      console.log(data);
+    }
+  })
 
   return (
     <LeadDataContext.Provider value={leadData}>
