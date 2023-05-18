@@ -14,7 +14,7 @@ interface LeadsData {
   field_data: Array<Field>
 }
 
-export interface Field {
+interface Field {
   name: string;
   values: Array<String>;
 }
