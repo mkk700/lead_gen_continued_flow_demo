@@ -13,8 +13,8 @@ import Version3 from './components/Version3';
 import { LeadDataContext, LeadsData } from './store/MyContext';
 import useFetch from './hooks/useFetch';
 
-const lead_id = 6223272841088085;
-const access_token = 'EAAGJ1PZAujwsBAPYHaWOuDoTNtmEC6931Gd4zgWHYfPZAqXZAP5ZC8oZBv4O8xmpAa5ZB3uZC7pSAPLiOWMzIt8EbX8N7xemvwMwM61TWVtwa0tgLxX2W0jNriS8CZAQIWz0u6fZCbiYFE5FQKuXrLgaxwSCozGSFKJbBqZAH8brxt3LVYkOBUeWZA2f1uMcGZCkIYWZAIygQiuLgdUZB8ZCZCDVoD2jQ9vOMO8S2Y319K5PTm4UOXZBSXxz8ZAYkL';
+const lead_id = 1961674867513271;
+const access_token = 'EAAGJ1PZAujwsBAGTE8dfVJT66TzRZBHZBpm8we81q2TIZBMU45AWGOtWOViXb70DMZAfYU8ELrBpC5Yb5id52KqeBvN8ZAFB4vcv7mM3Alv6e0h9tzAfrMdFLR8F7zNxb6NCcUMr1LzXqHyAHRdWIjcZA3RykJLUqxTNUoA7ZADXEd4TMKu6TuZBZAcKnQZAvVmNf9oNOsxHACsXp0yr8js4BL8IrEDz72uOCLCovQ18NHBrsGwc6K54gZCK';
 const url = `https://graph.facebook.com/v16.0/${lead_id}?access_token=${access_token}`
 const options = {
   method: 'GET',
@@ -24,11 +24,11 @@ function App() {
   const [leadData, setLeadData] = useState<LeadsData | null>(null);
   const { data, error } = useFetch<LeadsData>(url, options)
 
-  // if (data) { setLeadData(data); }
-  // if (error) { console.error(error); }
   useEffect(() => {
-    if(data){
-      console.log(data);
+    if (data) {
+      setLeadData(data);
+    } else {
+      setLeadData(null);
     }
   })
 
