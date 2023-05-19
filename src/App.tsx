@@ -5,59 +5,38 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Version1 from './components/Version1';
-import Version2 from './components/Version2';
-import Version3 from './components/Version3';
+import Version1 from './components/views/Version1';
+import Version2 from './components/views/Version2';
+import Version3 from './components/views/Version3';
 import { LeadDataContext, LeadsData } from './store/MyContext';
 import useFetch from './hooks/useFetch';
 
-const lead_id = 1961674867513271;
-const access_token = 'EAAGJ1PZAujwsBAGTE8dfVJT66TzRZBHZBpm8we81q2TIZBMU45AWGOtWOViXb70DMZAfYU8ELrBpC5Yb5id52KqeBvN8ZAFB4vcv7mM3Alv6e0h9tzAfrMdFLR8F7zNxb6NCcUMr1LzXqHyAHRdWIjcZA3RykJLUqxTNUoA7ZADXEd4TMKu6TuZBZAcKnQZAvVmNf9oNOsxHACsXp0yr8js4BL8IrEDz72uOCLCovQ18NHBrsGwc6K54gZCK';
-const url = `https://graph.facebook.com/v16.0/${lead_id}?access_token=${access_token}`
-const options = {
-  method: 'GET',
-}
-
 function App() {
-  const [leadData, setLeadData] = useState<LeadsData | null>(null);
-  const { data, error } = useFetch<LeadsData>(url, options)
-
-  useEffect(() => {
-    if (data) {
-      setLeadData(data);
-    } else {
-      setLeadData(null);
-    }
-  })
-
   return (
-    <LeadDataContext.Provider value={leadData}>
-      <Container>
-        <Navbar bg="dark" variant="dark">
-          <Container>
-            <Navbar.Brand href="/">Lead Gen - Continued Flow Demo</Navbar.Brand>
-            <Nav className="me-auto">
-              <Nav.Link href="/v1">V1</Nav.Link>
-              <Nav.Link href="/v2">V2</Nav.Link>
-              <Nav.Link href="/v3">V3</Nav.Link>
-            </Nav>
-          </Container>
-        </Navbar>
+    <Container>
+      <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="/">Lead Gen - Continued Flow Demo</Navbar.Brand>
+          <Nav className="me-auto">
+            <Nav.Link href="/v1">V1</Nav.Link>
+            <Nav.Link href="/v2">V2</Nav.Link>
+            <Nav.Link href="/v3">V3</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
 
-        <Router>
-          <Routes>
-            <Route path="/" element={<Version1 />} />
-            <Route path="/v1" element={<Version1 />} />
-            <Route path="/v2" element={<Version2 />} />
-            <Route path="/v3" element={<Version3 />} />
-            {/* not found */}
-            <Route path="*" element={<h2>Not Found</h2>} />
-          </Routes>
-        </Router>
-      </Container>
-    </LeadDataContext.Provider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Version1 />} />
+          <Route path="/v1" element={<Version1 />} />
+          <Route path="/v2" element={<Version2 />} />
+          <Route path="/v3" element={<Version3 />} />
+          {/* not found */}
+          <Route path="*" element={<h2>Not Found</h2>} />
+        </Routes>
+      </Router>
+    </Container>
   );
 }
 

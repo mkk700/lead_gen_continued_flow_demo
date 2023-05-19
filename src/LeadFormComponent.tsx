@@ -21,7 +21,6 @@ interface Field {
 
 function LeadFormComponent() {
   const { data, error } = useFetch<LeadsData>(url, options)
-  console.log("data: ", data);
   if (data) {
     data.field_data.map((field: Field) => {
       console.log(`name: ${field.name} value: ${field.values[0]}`);
