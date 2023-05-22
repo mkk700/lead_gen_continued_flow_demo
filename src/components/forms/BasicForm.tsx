@@ -37,17 +37,28 @@ const BasicExample = (props: Props) => {
                 </Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Phone Number</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("phone_number") : ""}  />
+                <Form.Text className="text-muted">
+                    We'll never share your phone number with anyone else.
+                </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Date of Birth</Form.Label>
+                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("date_of_birth") : ""}  />
+                <Form.Text className="text-muted">
+                    We'll never share your date of birth with anyone else.
+                </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Gender</Form.Label>
-                {['Male', 'Female'].map((radioType: any) => (
-                    <div key={`default-${radioType}`} className="mb-3">
-                        <Form.Check
-                            type='radio'
-                            id={`default-${radioType}`}
-                            label={`${radioType}`}
-                        />
-                    </div>
-                ))}
+                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("gender") : ""}  />
+                <Form.Text className="text-muted">
+                    We'll never share your gender with anyone else.
+                </Form.Text>
             </Form.Group>
 
             <Button variant="primary" type="submit">
