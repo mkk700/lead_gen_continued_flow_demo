@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { LeadDataContext, LeadsData } from '../../store/MyContext';
+import { LeadsData } from '../../store/MyContext';
 
 
 export interface Props {
@@ -31,7 +31,7 @@ const BasicExample = (props: Props) => {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("email") : ""}  />
+                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("email") : ""} />
                 <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                 </Form.Text>
@@ -39,7 +39,7 @@ const BasicExample = (props: Props) => {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Phone Number</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("phone_number") : ""}  />
+                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("phone_number") : ""} />
                 <Form.Text className="text-muted">
                     We'll never share your phone number with anyone else.
                 </Form.Text>
@@ -47,7 +47,7 @@ const BasicExample = (props: Props) => {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Date of Birth</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("date_of_birth") : ""}  />
+                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("date_of_birth") : ""} />
                 <Form.Text className="text-muted">
                     We'll never share your date of birth with anyone else.
                 </Form.Text>
@@ -55,7 +55,7 @@ const BasicExample = (props: Props) => {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Gender</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("gender") : ""}  />
+                <Form.Control type="email" placeholder="Enter email" value={leadMap ? leadMap.get("gender") : ""} />
                 <Form.Text className="text-muted">
                     We'll never share your gender with anyone else.
                 </Form.Text>

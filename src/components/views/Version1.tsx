@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
-import { LeadDataContext, LeadsData } from '../../store/MyContext';
+import { LeadsData } from '../../store/MyContext';
 import useFetchLead from '../../hooks/useFetchLead';
 import BasicExample from '../forms/BasicForm';
 
@@ -13,7 +13,7 @@ function Version1() {
 
     useEffect(() => {
         setLeadData(data);
-    });
+    }, [data]);
 
     return (
         <Container>

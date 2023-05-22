@@ -1,5 +1,3 @@
-import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
@@ -9,8 +7,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Version1 from './components/views/Version1';
 import Version2 from './components/views/Version2';
 import Version3 from './components/views/Version3';
-import { LeadDataContext, LeadsData } from './store/MyContext';
-import useFetch from './hooks/useFetch';
 
 function App() {
   return (
