@@ -43,7 +43,6 @@ function useFetch<T = unknown>(url?: string, options?: RequestInit): State<T> {
     useEffect(() => {
         // Do nothing if the url is not given
         if (!url) return
-
         cancelRequest.current = false
 
         const fetchData = async () => {

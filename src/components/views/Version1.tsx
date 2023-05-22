@@ -8,7 +8,7 @@ import BasicExample from '../forms/BasicForm';
 function Version1() {
     const [queryParameters] = useSearchParams();
     const [leadData, setLeadData] = useState<LeadsData | null>(null);
-    const fblid = queryParameters.get("fblid"); //1961674867513271
+    const fblid = queryParameters.get("fbld_id"); //1961674867513271
     const [data] = useFetchLead(fblid ? fblid : "");
 
     useEffect(() => {
