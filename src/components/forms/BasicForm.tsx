@@ -50,9 +50,17 @@ const BasicExample = (props: Props) => {
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Gender</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={leadMap && leadMap.has("gender") ? leadMap.get("gender") : ""} />
+                <Form.Control type="text" placeholder="Enter email" value={leadMap && leadMap.has("gender") ? leadMap.get("gender") : ""} />
                 <Form.Text className="text-muted">
                     We'll never share your gender with anyone else.
+                </Form.Text>
+            </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Zip Code</Form.Label>
+                <Form.Control type="number" placeholder="Enter Zip Code" value={leadMap && leadMap.has("zip_code") ? leadMap.get("zip_code") : ""} />
+                <Form.Text className="text-muted">
+                    We'll never share your Zip Code with anyone else.
                 </Form.Text>
             </Form.Group>
 
