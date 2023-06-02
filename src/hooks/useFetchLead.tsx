@@ -21,9 +21,10 @@ const useFetchLead = (lead_id: string) => {
         if (error) {
             console.error(error);
         }
-    }, [data, error]);
+    }, [data, error]); 
 
     return [leadData];
 }
 
 export default useFetchLead;
+ 
