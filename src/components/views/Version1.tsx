@@ -3,7 +3,7 @@ import { useSearchParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import { LeadsData } from '../../store/MyContext';
 import useFetchLead from '../../hooks/useFetchLead';
-import BasicExample from '../forms/BasicForm';
+import BasicForm from '../forms/BasicForm';
 
 function Version1() {
     const [queryParameters] = useSearchParams();
@@ -23,7 +23,7 @@ function Version1() {
                     <p>fblid: {fblid}</p>
                 </div>
                 <br />
-                <BasicExample lead={leadData} />
+                <BasicForm lead={leadData} />
             </Container>
         </Container>
     );
