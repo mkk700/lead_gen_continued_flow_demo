@@ -17,7 +17,7 @@ function Version2() {
 
     return (
         <Container>
-        <h2>Version 1</h2>
+        <h2>Version 2 - Partial fill</h2>
         <Container>
             <div>
                 <p>fblid: {fblid}</p>
