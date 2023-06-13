@@ -3,7 +3,10 @@ import { useSearchParams } from 'react-router-dom'
 import Container from 'react-bootstrap/Container';
 import { LeadsData } from '../../store/MyContext';
 import useFetchLead from '../../hooks/useFetchLead';
-import BasicFormV3 from '../forms/BasicFormV2';
+import BasicFormV3 from '../forms/BasicFormV3';
+import 'react-datetime-picker/dist/DateTimePicker.css';
+import 'react-calendar/dist/Calendar.css';
+import 'react-clock/dist/Clock.css';
 
 function Version3() {
     const [queryParameters] = useSearchParams();

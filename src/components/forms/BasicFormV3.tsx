@@ -1,6 +1,8 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { LeadsData } from '../../store/MyContext';
+import React, { useState } from 'react';
+import DateTimePicker from 'react-datetime-picker';
 
 export interface Props {
     lead: LeadsData | null;
@@ -11,6 +13,8 @@ const BasicFormV3 = (props: Props) => {
         map.set(obj.name, obj.values[0]);
         return map;
     }, new Map());
+
+    const [value, onChange] = useState(new Date());
 
     return (
         <Form>
@@ -31,10 +35,11 @@ const BasicFormV3 = (props: Props) => {
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Zip Code</Form.Label>
-                <Form.Control type="number" placeholder="Enter Zip Code" value={leadMap && leadMap.has("zip_code") ? leadMap.get("zip_code") : ""} />
+                <Form.Label>Date</Form.Label>
+                {/* @ts-expect-error: ignore */}
+                <DateTimePicker onChange={onChange} value={value} />
                 <Form.Text className="text-muted">
-                    We'll never share your Zip Code with anyone else.
+                    Picke a date
                 </Form.Text>
             </Form.Group>
 
